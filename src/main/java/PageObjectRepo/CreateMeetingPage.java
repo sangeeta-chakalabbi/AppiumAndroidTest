@@ -33,8 +33,14 @@ public class CreateMeetingPage {
 	@AndroidFindBy(uiAutomator="textContains(\"Double tap to switch to calendar view.\")")
 	private WebElement datePickerSpinner;
 	
-	@AndroidFindBy(uiAutomator="textContains(\"Minute\")") 
-	private WebElement minutePickerSpinner;
+	@AndroidFindBy(uiAutomator="textContains(\"Hour,\")") 
+	private WebElement hourPickerSpinnerButton;
+
+	@AndroidFindBy(uiAutomator="textContains(\"Minute,\")") 
+	private WebElement minutePickerSpinnerButton;
+	
+	@AndroidFindBy(uiAutomator="textContains(\"m,\")") 
+	private List<WebElement> amPmPickerSpinnerButtons;
 	
 	@AndroidFindBy(className="android.widget.EditText")
 	private List<AndroidElement> timeComponents;
@@ -75,8 +81,38 @@ public class CreateMeetingPage {
 	@AndroidFindBy(id="com.samsung.android.calendar:id/sesl_date_picker_calendar_header_text")
 	private WebElement calenderMonthText;
 	
+	@AndroidFindBy(id="com.samsung.android.calendar:id/sesl_timepicker_layout")
+	private WebElement timePicker;
+	
+
+	public WebElement getHourPickerSpinnerButtons() {
+		return hourPickerSpinnerButton;
+	}
 
 
+	public void setHourPickerSpinnerButtons(WebElement hourPickerSpinnerButton) {
+		this.hourPickerSpinnerButton = hourPickerSpinnerButton;
+	}
+
+
+	public WebElement getMinutePickerSpinnerButton() {
+		return minutePickerSpinnerButton;
+	}
+
+
+	public void setMinutePickerSpinnerButton(WebElement minutePickerSpinnerButton) {
+		this.minutePickerSpinnerButton = minutePickerSpinnerButton;
+	}
+
+
+	public List<WebElement> getAmPmPickerSpinnerButtons() {
+		return amPmPickerSpinnerButtons;
+	}
+
+
+	public void setAmPmPickerSpinnerButtons(List<WebElement> amPmPickerSpinnerButtons) {
+		this.amPmPickerSpinnerButtons = amPmPickerSpinnerButtons;
+	}
 
 	/**
 	 * @return the calenderMonthText

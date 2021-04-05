@@ -118,7 +118,7 @@ public class Helper {
 		
 		updateMeetingInConfig(meetingInputs);
 
-		//createMeeting.getEndDateTime().click();
+		createMeeting.getEndDateTime().click();
 		//createMeeting.getDatePickerSpinner().click();
 		//setMonth(meetingInputs.getEndMonth(), createMeeting);
 		setEndDateAndTime(meetingInputs,createMeeting);
@@ -230,7 +230,6 @@ public class Helper {
 	
 	public void setStartDateAndTIme(MeetingDetails meetingInputs, CreateMeetingPage createMeeting ) {
 		
-		//createMeeting.getDatePickerSpinner().click();
 		String dateSet = setDate(meetingInputs.getDay(), createMeeting); 
 		String[] substrings = dateSet.split(" ");
 		meetingInputs.setDayOfTheMonth(substrings[1]);
@@ -251,26 +250,83 @@ public class Helper {
 	}
 	
 	public void setHour(String hour, CreateMeetingPage createMeeting) {
-		createMeeting.setHourPickerSpinner(hour);
+		
+		WebElement hourButton = createMeeting.getHourPickerSpinnerButtons();		
+		List<AndroidElement> textFields = SetUp.driver.findElements(By.className("android.widget.EditText"));
+		AndroidElement hourElement = null;
+		
+		for(AndroidElement textField: textFields) {
+			if(textField.getText().contains("Hour")) {
+				hourElement = textField;
+				break;
+			}
+		}
+		
+		String hourSelected = new String();
+		int count = 0;
+		while(count<12) {
+		    hourSelected = getTimeComponent(hourElement.getText() , ",");
+			if(hourSelected.equals(hour)) {
+				break;
+			}
+			hourButton.click();
+			waitForElementTobeAvailable();
+			count++;
+		}		
+	}
+	
+	public String getTimeComponent(String fromString, String splitOperator) {
+		String[] substrings = fromString.split(splitOperator);
+		System.out.println(substrings[0] + ":::" + substrings[1]);
+		return substrings[0];
 	}
 	
 	public void setMinute(String minute, CreateMeetingPage createMeeting) {
-		createMeeting.setMinutePickerSpinner(minute);
+		WebElement minuteButton = createMeeting.getMinutePickerSpinnerButton();		
+
+		List<AndroidElement> textFields = SetUp.driver.findElements(By.className("android.widget.EditText"));
+		AndroidElement minuteElement = null;
+	
+		for(AndroidElement textField: textFields) {
+			if(textField.getText().contains("Minute")) {
+				minuteElement = textField;
+				break;
+			}
+		}
+		String minuteSelected = new String();
+		int count = 0;
+		while(count<12) {
+			minuteSelected = getTimeComponent(minuteElement.getText() , ",");
+			if(minuteSelected.equals(minute)) {
+				break;
+			}
+			minuteButton.click();
+			waitForElementTobeAvailable();
+			count++;
+		}	
 	}
 	
 	public void setAmPm(String meridiem,CreateMeetingPage createMeeting ) {
-		if(meridiem.equals("AM")) {
-		createMeeting.setMeridiemToAm();
+		
+		List<WebElement> meridiemButton = createMeeting.getAmPmPickerSpinnerButtons();
+		meridiem = meridiem.toLowerCase();
+		
+		for(WebElement tmp: meridiemButton) {
+			System.out.println("text:::"+tmp.getText());
+			System.out.println("Selected attribute value:::"+tmp.getAttribute("selected"));
+			
+			if(tmp.getText().contains(meridiem)) {
+				if(tmp.getAttribute("selected").equals("false")) {
+					tmp.click();
+				}
+			}		 
 		}
-		else if(meridiem.equals("PM")) {
-			createMeeting.setMeridiemToPm();
-		}
+
 	}
 	
 	public String setDate(String weekOfTheDay , CreateMeetingPage createMeeting) {
 		
 		String tmpDayOfTheWeek = new String();
-		boolean gotIt= false;
 		 	 	
     	List<AndroidElement> dates= createMeeting.getDatePicker();
     	int size = dates.size();
@@ -282,7 +338,6 @@ public class Helper {
     				tmpDayOfTheWeek = (dates.get(j).getAttribute("contentDescription"));
     				if(tmpDayOfTheWeek.contains(weekOfTheDay)) {  
     					dates.get(j).click();    					
-    					gotIt=true;
     					return tmpDayOfTheWeek;
     					
     				}
@@ -296,7 +351,7 @@ public class Helper {
 	
 	 public void waitForElementTobeAvailable() {
 		 try {
-				Thread.sleep(3000);
+				Thread.sleep(500);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
