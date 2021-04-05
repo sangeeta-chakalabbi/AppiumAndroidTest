@@ -23,7 +23,7 @@ Automatically creates either recurring or single instance meetings on calander a
 * log4j
 
 ##Automation Demo Video
-![Demo Link](https://github.com/sangeeta-chakalabbi/AppiumAndroidTest/blob/main/mediaFiles/AutomationDemo.mp4)
+![Demo Link](https://github.com/sangeeta-chakalabbi/AppiumAndroidTest/blob/main/mediaFiles/WorkShopMeeting.jpeg)(https://github.com/sangeeta-chakalabbi/AppiumAndroidTest/blob/main/mediaFiles/AutomationDemo.mp4)
 
 
 ## Prerequisites Installations:
