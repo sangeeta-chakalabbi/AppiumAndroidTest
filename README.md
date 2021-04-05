@@ -22,6 +22,9 @@ Automatically creates either recurring or single instance meetings on calander a
 * Cucumber
 * log4j
 
+##Automation Demo Video
+![Demo Link](https://github.com/sangeeta-chakalabbi/AppiumAndroidTest/blob/main/mediaFiles/AutomationDemo.mp4)
+
 
 ## Prerequisites Installations:
 
@@ -53,21 +56,33 @@ It can also pick only specified test tags for running.
 * Create your tests
 * Create your Page Object class w.r.t test that you have written, if not created already (Take the reference from src/main/java/PageObjectRepo.
 
+##Sample Desired capabilities
+![Desired Capabilities] (https://github.com/sangeeta-chakalabbi/AppiumAndroidTest/blob/main/mediaFiles/DesiredCapabilities.png)
+
+##Test Run Summary
+Tests are triggered from cucumber runner file
 
 *To run the script from a command line in a Terminal window you can use the below command.*
 ```
 mvn test verify -DdeviceName="Galaxy Note9" -Dcucumber.options="--tags @auto"
 ```
 
+![](https://github.com/sangeeta-chakalabbi/AppiumAndroidTest/blob/main/mediaFiles/testSummary.png)
+
 ## Reporting and Logging
 **Reporting Path**
 ```
 ./target/report/cucumber-html-reports/
 ```
+
+![Report File Path](https://github.com/sangeeta-chakalabbi/AppiumAndroidTest/blob/main/mediaFiles/Cucumber%20Reports.png)
+![Detailed Report](https://github.com/sangeeta-chakalabbi/AppiumAndroidTest/blob/main/mediaFiles/DetailedReport.png)
+
 **Logging Path**
 ```
 ./src/test/java/Logs/ApplicationLog
 ```
+
 
 
 ## Assumptions
