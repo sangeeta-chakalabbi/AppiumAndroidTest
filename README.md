@@ -40,6 +40,7 @@ Automatically creates either recurring or single instance meetings on calander a
 * Logging
 * Maven
 * Cucumber -html -report
+* Appium server must be started
 
 
 ## How This Framework Works:

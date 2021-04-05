@@ -53,9 +53,10 @@ public class SetUpRecurringMeeting {
 	
 	@When("It occurs on every {string} : {string}")
 	public void it_occurs_on_every_weekday(String frequency , String dayOfTheWeek) {
-		assertTrue(helper.isValidDayOfTheWeekFOrmat(dayOfTheWeek));
-		log.error("Test failed: Day of the week is invalid: Pick a valid day of the week");
-		Assert.fail("Day of the week is invalid: Pick a valid day of the week");
+		if(!helper.isValidDayOfTheWeekFOrmat(dayOfTheWeek)) {
+			log.error("Test failed: Day of the week is invalid: Pick a valid day of the week");	
+			 Assert.fail("Test failed: Day of the week is invalid: Pick a valid day of the week");
+		}
 		
 		meetingInputs.setDay(dayOfTheWeek);
 		meetingInputs.setRecurringFrequency(frequency);
