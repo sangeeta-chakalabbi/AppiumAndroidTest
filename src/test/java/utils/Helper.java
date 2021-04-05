@@ -360,19 +360,25 @@ public class Helper {
 	 }
 	 
 	 public boolean isValidDayOfTheWeekFOrmat(String weekDay) {
-		 Month[] months = Month.values();
-		 Month month = null;
-			for(int i=0 ; i< months.length; i++) {
-				months[i].getDisplayName(TextStyle.FULL,Locale.ENGLISH).equalsIgnoreCase(weekDay);
-				month = months[i];
-			}	
-			if(month==null) {
-				return false;
-			}
-			else {
-				return true;
-			}
+		 String[] days = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
+		 for(int i=0; i < days.length; i++) {
+			 if (days[i].equals(weekDay)) {
+				 return true;
+			 }
+		 }
+		 return false;
 	 }
+	 
+	 
+	 public boolean isItAHoliday(String day) {
+		 if(day.equalsIgnoreCase("Saturday") || day.equalsIgnoreCase("Sunday")) {
+			 return true;
+		 }
+		 else {
+			 return false;
+		 }
+	 }
+	 
 	 
 	 public static void getScreenshots(String fileName) throws Throwable{
 			

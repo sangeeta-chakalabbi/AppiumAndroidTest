@@ -19,7 +19,7 @@ Feature: Create a recurring meeting using Native Android Calendar App.
       | WorkShop |          12 |          00 | PM            |       01 |        00 | PM          | Friday       | April      | weekly    |              2 |5|
       | Stand Up |         10 |          00 | AM            |       10 |        15 | AM         | Monday       | April      | weekly    |              3 |5| 
 		  # NEGATIVE SCENARIOS --- CHOSING HOLIDAY 
-		  | Holiday |         9 |          00 | AM              |       10 |        00 | AM          | Sunday       | April      | weekly    |              3 |5|
+		  | Holiday Meeting |         9 |          00 | AM              |       10 |        00 | AM          | Sunday       | April      | weekly    |              3 |5|
 		  # NEGATIVE SCENARIOS --- NO ATTENDEES
 		  | No Attendees |         8 |          00 | AM         |       10 |        00 | AM          | Sunday       | April      | weekly    |              3 |0|
 		   # POSITIVE SCENARIOS --- SINGLE MEETING

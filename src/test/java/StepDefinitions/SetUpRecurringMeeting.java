@@ -54,7 +54,7 @@ public class SetUpRecurringMeeting {
 	@When("It occurs on every {string} : {string}")
 	public void it_occurs_on_every_weekday(String frequency , String dayOfTheWeek) {
 		if(!helper.isValidDayOfTheWeekFOrmat(dayOfTheWeek)) {
-			log.error("Test failed: Day of the week is invalid: Pick a valid day of the week");	
+			log.error("Test failed: Day of the week is invalid: Pick a valid day of the week......You Entered:   "+dayOfTheWeek);	
 			 Assert.fail("Test failed: Day of the week is invalid: Pick a valid day of the week");
 		}
 		
@@ -64,6 +64,10 @@ public class SetUpRecurringMeeting {
 
 	@When("It is only on weekdays")
 	public void it_is_only_on_weekdays() {
+		if(helper.isItAHoliday(meetingInputs.getDay())) {
+			log.error("Test failed: Cannot schedule meeting on a holiday     :"+meetingInputs.getDay());	
+			 Assert.fail("Test failed: Cannot schedule meeting on a holiday");
+		}
 		meetingInputs.setExcludeHolidays(true);
 	}
 	
@@ -82,8 +86,8 @@ public class SetUpRecurringMeeting {
 	public void i_invite_of_attendies(String attendeeCount) {
 		int numberOfAttendees = Integer.parseInt(attendeeCount);
 		if(numberOfAttendees <=0) {
-			log.error("Test failed: Attendees count cannot be zero: There has ti be atleast one attendee");
-			Assert.fail("Attendees count cannot be zero: There has ti be atleast one attendee");
+			log.error("Test failed: Attendees count cannot be zero: There has to be atleast one attendee");
+			Assert.fail("Attendees count cannot be zero: There has to be atleast one attendee");
 		}
 		meetingInputs.setNumberOfAttendies(numberOfAttendees);
 	}
