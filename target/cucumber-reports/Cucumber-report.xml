@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="19.213">
+    <testcase classname="Create a recurring meeting using Native Android Calendar App." name="Create a meeting event" time="18.753">
+        <failure message="Day of the week is invalid: Pick a valid day of the week" type="java.lang.AssertionError"><![CDATA[Given I have launched the Calendar App......................................passed
+When Meeting is between "9" : "30" : "AM" to "1" : "30" : "PM"..............passed
+And It occurs on every "weekly" : "Friday"..................................failed
+And It is only on weekdays..................................................skipped
+And It starts from the month "April" and continues for next "2".............skipped
+And I invite "5" of attendies...............................................skipped
+Then I want to book a meeting with the title "WorkShop".....................skipped
+And I save the meeting......................................................skipped
+Then I Check if the meeting is created as expected..........................skipped
+Then I can delete the meeting...............................................skipped
+
+StackTrace:
+java.lang.AssertionError: Day of the week is invalid: Pick a valid day of the week
+	at org.testng.Assert.fail(Assert.java:97)
+	at StepDefinitions.SetUpRecurringMeeting.it_occurs_on_every_weekday(SetUpRecurringMeeting.java:58)
+	at ✽.It occurs on every "weekly" : "Friday"(file:///Users/San/testAutomation/AppiumTest/src/test/java/Feature/SetUpRecurringMeeting.feature:7)
+]]></failure>
+    </testcase>
+</testsuite>

@@ -1,0 +1,238 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "start_timestamp": "2021-04-04T13:15:39.822Z",
+        "before": [
+          {
+            "result": {
+              "duration": 11902132000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepDefinitions.Hooks.start()"
+            }
+          }
+        ],
+        "line": 18,
+        "name": "Create a meeting event",
+        "description": "",
+        "id": "create-a-recurring-meeting-using-native-android-calendar-app.;create-a-meeting-event;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 187425000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepDefinitions.Hooks.end(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 1302667000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "I have launched the Calendar App",
+            "match": {
+              "location": "StepDefinitions.SetUpRecurringMeeting.i_have_launched_the_calendar_app()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1607000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Meeting is between \"9\" : \"30\" : \"AM\" to \"1\" : \"30\" : \"PM\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"9\"",
+                  "offset": 19
+                },
+                {
+                  "val": "\"30\"",
+                  "offset": 25
+                },
+                {
+                  "val": "\"AM\"",
+                  "offset": 32
+                },
+                {
+                  "val": "\"1\"",
+                  "offset": 40
+                },
+                {
+                  "val": "\"30\"",
+                  "offset": 46
+                },
+                {
+                  "val": "\"PM\"",
+                  "offset": 53
+                }
+              ],
+              "location": "StepDefinitions.SetUpRecurringMeeting.meeting_is_between_to(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 261000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "It occurs on every \"weekly\" : \"Friday\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"weekly\"",
+                  "offset": 19
+                },
+                {
+                  "val": "\"Friday\"",
+                  "offset": 30
+                }
+              ],
+              "location": "StepDefinitions.SetUpRecurringMeeting.it_occurs_on_every_weekday(java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 87000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "It is only on weekdays",
+            "match": {
+              "location": "StepDefinitions.SetUpRecurringMeeting.it_is_only_on_weekdays()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 243000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "It starts from the month \"April\" and continues for next \"2\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"April\"",
+                  "offset": 25
+                },
+                {
+                  "val": "\"2\"",
+                  "offset": 56
+                }
+              ],
+              "location": "StepDefinitions.SetUpRecurringMeeting.it_starts_from_the_month_and_continues_for_next(java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 172000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "I invite \"5\" of attendies",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"5\"",
+                  "offset": 9
+                }
+              ],
+              "location": "StepDefinitions.SetUpRecurringMeeting.i_invite_of_attendies(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 113000,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "I want to book a meeting with the title \"WorkShop\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"WorkShop\"",
+                  "offset": 40
+                }
+              ],
+              "location": "StepDefinitions.SetUpRecurringMeeting.i_want_to_book_a_meeting_with_the_title(java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 22601311000,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "I save the meeting",
+            "match": {
+              "location": "StepDefinitions.SetUpRecurringMeeting.i_save_the_meeting()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 13261147000,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "I Check if the meeting is created as expected",
+            "match": {
+              "location": "StepDefinitions.SetUpRecurringMeeting.i_check_if_the_meeting_is_created_as_expected()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 9794929000,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "I can delete the meeting",
+            "match": {
+              "location": "StepDefinitions.SetUpRecurringMeeting.i_can_delete_the_meeting()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Regression"
+          }
+        ]
+      }
+    ],
+    "name": "Create a recurring meeting using Native Android Calendar App.",
+    "description": "",
+    "id": "create-a-recurring-meeting-using-native-android-calendar-app.",
+    "keyword": "Feature",
+    "uri": "file:src/test/java/Feature/SetUpRecurringMeeting.feature",
+    "tags": [
+      {
+        "name": "@Regression",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      }
+    ]
+  }
+]
