@@ -27,7 +27,7 @@ Automatically creates either recurring or single instance meetings on calander a
 
 ![Demo Link](https://github.com/sangeeta-chakalabbi/AppiumAndroidTest/blob/main/mediaFiles/WorkShopMeeting.jpeg)
 
-(https://github.com/sangeeta-chakalabbi/AppiumAndroidTest/blob/main/mediaFiles/AutomationDemo.mp4)
+	(https://github.com/sangeeta-chakalabbi/AppiumAndroidTest/blob/main/mediaFiles/AutomationDemo.mp4)
 
 
 ## Prerequisites Installations:
