@@ -115,6 +115,18 @@ mvn test verify -DdeviceName="Galaxy Note9" -Dcucumber.options="--tags @auto"
 
 ```
 
+## Challenges faced during the development and Solutions used
+```
+1 - Race conditions can occur where in, the suite tries to access the UI element UI even before it is ready or available to be used.
+    Solutions: Can be avoided by using proper waits like 
+     			- wait.until(ExpectedConditions.elementToBeClickable(<UIElement>));  
+     			- wait.until(ExpectedConditions.visibilityOf(<UIElement>));  
+2- StaleElement exceptions. This happens when the element being accessed is no more valid or is not part of DOM (Document Object Model)
+	Solution: This is a known issue with Selenium framework which turn is used by Appium.
+	
+3- From the design point of view it needed a bit of thinking to come up with feature definition in such a way that the steps could be reused.
+```
+
 ## Documentation and the Working Mobile Automation Execution video
 
 *https://github.com/*
